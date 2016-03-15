@@ -3,7 +3,7 @@
 * Tran Quang Duy
 * Do Quang Huy
 * To Minh Son
-* Tran Huong Thao going mad
+* Tran Huong Thao
 * Nguyen Duc Tung
 
 ## Project Description
