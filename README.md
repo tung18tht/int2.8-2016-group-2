@@ -7,5 +7,5 @@
 * Nguyen Duc Tung
 
 ## Project Description
-The aim of our project is building web version of Tinder
-Tinder is a famous application on iOS and Android to make friends
+The aim of our project is building web version of Tinder.
+Tinder is a famous application on iOS and Android to make friends.
