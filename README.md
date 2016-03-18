@@ -10,7 +10,6 @@
 
 The aim of our project is building web version of Tinder.
 Tinder is a famous application on iOS and Android to make friends.
-123456
 
 The aim of our project is building web version of Tinder - a famous application on iOS and Android to make friends
 
