@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Caption:</strong>
+<div class="col-md-4 col-md-offset-4">
+  <div class="thumbnail">
+  <h2 style = "color: blue"><%= @post.user.email %></h2>
   <%= image_tag @post.image.url(:medium) %>
-  <%= @post.caption %>
-</p>
-
-<%= link_to 'Back', posts_path %> |
-<% if @post.user == current_user %>
-  <%= link_to 'Edit', edit_post_path(@post) %> 
-<% end %>
+    <div class="caption">
+      <h4 style = "color: blue"><%= @post.user.email %>  <span style = "color: black"><%= @post.caption %></span></h4>
+      <p>
+      <%= link_to 'Back', posts_path %> |
+      <% if @post.user == current_user %>
+        <%= link_to 'Edit', edit_post_path(@post) %> 
+      <% end %>
+    </div>
+  </div>
+</div>
