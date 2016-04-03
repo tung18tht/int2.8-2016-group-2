@@ -18,7 +18,7 @@
         <td><%= post.user.email %></td>
         <td><%= link_to (image_tag post.image.url(:medium)), post %></td>
         <td><%= post.caption %></td>
-        <!--<td><%#= link_to 'Show', post %></td>-->
+        <td><%#= link_to 'Show', post %></td>
         <% if post.user == current_user %>
           <td><%= link_to 'Edit', edit_post_path(post) %></td>
           <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

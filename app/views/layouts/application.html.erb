@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <meta charset="utf-8">
+    <title>Cinder</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -17,19 +14,7 @@
     <%= link_to 'Sign Up', new_user_registration_path %>
     <%= link_to 'Sign In', new_user_session_path %>
     <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete  %>
-<!--<div class="top-bar">-->
-<!--  <div class="top-bar-left">-->
-<!--    <ul class="menu">-->
-<!--      <li class="menu-text">Photohram</li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--  <div class="top-bar-right">-->
-<!--    <ul class="menu">-->
-<!--      <li><a href="#">Sign Up</a></li>-->
-<!--      <li><a href="#">Log In</a></li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--</div>-->
+  
     <%= yield %>
 
   </body>

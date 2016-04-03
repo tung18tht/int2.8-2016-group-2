@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 gem 'devise', '~> 3.5', '>= 3.5.6'
-gem 'foundation-rails', '~> 6.2.0.1'
+
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
