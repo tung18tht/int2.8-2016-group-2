@@ -11,6 +11,7 @@
   <body>
     <p class="alert"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+<<<<<<< HEAD
     
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
@@ -31,6 +32,14 @@
         
       </div>
     </nav>
+=======
+    <% if user_signed_in? %>
+      Sign in as <%= current_user.email %>. Not you?
+      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+>>>>>>> a0ec61f16808e56a6967ff43b7e82861fdb0cb91
   
     <%= yield %>
 

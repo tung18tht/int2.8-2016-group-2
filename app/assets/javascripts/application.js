@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require bootstrap-sprockets
+=======
+>>>>>>> a0ec61f16808e56a6967ff43b7e82861fdb0cb91
 //= require turbolinks
 //= require_tree .
