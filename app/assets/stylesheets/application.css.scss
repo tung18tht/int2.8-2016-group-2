@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.container2 {
+	width: 50%;
+	max-width: 750px;
+	background: #bfffe3;
+	margin: 3em auto 0 auto;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	padding: 1em 0;
+	text-align: center;
+}
+.logform {
+	width: 25%;
+	background: #bfffe3;
+	margin: 3em auto 0 auto;
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	padding: 1em 0;
+	text-align: center;
+}
+.centering {
+	margin: 20px;
+	text-align: center;
+}
