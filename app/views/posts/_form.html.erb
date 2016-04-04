@@ -10,13 +10,14 @@
       </ul>
     </div>
   <% end %>
-  
-  <div class="field">
-    <%= f.label :caption %><br>
+  <div class="container2">
+  <div class="centering" style="clear: both">
     <%= f.file_field :image %>
-    <%= f.text_field :caption %>
-  </div>
-  <div class="actions">
+    </div>
+    <!--<%= f.label :caption %>--><br>
+    <%= f.text_field :caption,:value => "Image caption",:size => 80 %>
+  <div class="btn">
     <%= f.submit %>
+  </div>
   </div>
 <% end %>
