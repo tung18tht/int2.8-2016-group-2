@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="col-md-4 col-md-offset-4">
   <div class="thumbnail">
-  <h2 style = "color: blue"><%= @post.user.email %></h2>
+  <h2 class="text-primary"><%= @post.user.email %></h2>
   <%= image_tag @post.image.url(:medium) %>
     <div class="caption">
-      <h4 style = "color: blue"><%= @post.user.email %>  <span style = "color: black"><%= @post.caption %></span></h4>
+      <h4 class="text-primary"><%= @post.user.email %>  <small style="color: black"><%= @post.caption %></small></h4>
       <p>
       <%= link_to 'Back', posts_path %> |
       <% if @post.user == current_user %>
