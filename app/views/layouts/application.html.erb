@@ -8,16 +8,15 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body>
-    <p class="alert"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body style="background-color: #EFEFEF;">
+    
   
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #bfffe3;">
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #FFB0AC;">
       <div class="container-fluid">
         
          <!--Brand image -->
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="/">
           <img alt="Tinder" src="...">
           </a>
         </div>
@@ -30,10 +29,12 @@
         <% end %>
         
       </div>
+
     </nav>
-
-  
+<!--<p class="alert centering" style="color:green;"><%= notice %></p>-->
+        <p class="alert text-center" style="background-color: green; clear:both;"><%= alert %></p>
+    <div style="margin-top: 30px;">
     <%= yield %>
-
+</div>
   </body>
 </html>
