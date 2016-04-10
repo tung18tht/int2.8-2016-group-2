@@ -9,9 +9,10 @@ Feature: Add new post
     Then I should see a new post page
 
   Scenario: Adding new post
-    Given I am in the new post page
-    When I upload an image
+    Given a logged in user
+    When I go to new post page
+    And I upload an image
     And I input a caption
-    And I click on create post
-    Then I should be redirected to the home page
+    And I click on create post button
+    Then I should be redirected to home page
     And I should see my post

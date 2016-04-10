@@ -72,16 +72,15 @@ end
 Then(/^I should see a new post page$/) do
   expect(current_path).to eq(new_post_path)
 end
-Given(/^I am in the new post page$/) do
-   @user = User.create!({
-             :email => "testing@usth.edu.vn",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-           })
-  visit new_user_session_path
-  fill_in "Email", :with => 'testing@usth.edu.vn'
-  fill_in "Password", :with => '12345678'
-  click_button "Log in"
+When(/^I go to new post page$/) do
   visit new_post_path
-  expect(current_path).to eq(new_post_path)
+end
+When(/^I upload an image$/) do
+  attach_file 'image', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+end
+When(/^I input a caption$/) do
+  fill_in "Caption", :with => 'Demo'
+end
+When(/^I click on create post button$/) do
+  click_button "Create Post"
 end
