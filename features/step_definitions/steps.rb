@@ -64,3 +64,24 @@ end
 Then(/^I should see the Sign in button$/) do
   expect(page).to have_content("Sign In")
 end
+
+# Posts test
+When(/^I click on new post$/) do
+  click_on "New Post"
+end
+Then(/^I should see a new post page$/) do
+  expect(current_path).to eq(new_post_path)
+end
+Given(/^I am in the new post page$/) do
+   @user = User.create!({
+             :email => "testing@usth.edu.vn",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
+  visit new_user_session_path
+  fill_in "Email", :with => 'testing@usth.edu.vn'
+  fill_in "Password", :with => '12345678'
+  click_button "Log in"
+  visit new_post_path
+  expect(current_path).to eq(new_post_path)
+end
