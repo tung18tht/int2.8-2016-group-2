@@ -13,5 +13,6 @@ Scenario: New user signing up
 When I go to the sign up page
 And I fill in form
 And I click on sign up button
-Then I should redirect to the home page
+Then I should be redirected to home page
+And I should see a welcome message
 And I'm automatically logged in
