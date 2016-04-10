@@ -9,8 +9,7 @@ Feature: Add new post
     Then I should see a new post page
 
   Scenario: Adding new post
-    Given a logged in user
-    And I am in the new post page
+    Given I am in the new post page
     When I upload an image
     And I input a caption
     And I click on create post
