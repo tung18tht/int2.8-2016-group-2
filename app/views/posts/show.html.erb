@@ -4,12 +4,14 @@
   <h2 class="text-primary"><%= @post.user.email %></h2>
   <%= image_tag @post.image.url(:medium) %>
     <div class="caption">
-      <h4 class="text-primary"><%= @post.user.email %>  <small style="color: black"><%= @post.caption %></small></h4>
-      <p>
+      <h4 class="text-primary"><!--<%= @post.user.email %> --> <small style="color: black"><%= @post.caption %></small></h4>
+      <p> 
+      <div class="centering">
       <%= link_to 'Back', posts_path %> |
       <% if @post.user == current_user %>
         <%= link_to 'Edit', edit_post_path(@post) %> 
       <% end %>
+      </div>
     </div>
   </div>
 </div>

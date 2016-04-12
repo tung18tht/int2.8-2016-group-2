@@ -69,14 +69,14 @@ end
 When(/^I click on new post$/) do
   click_on "New Post"
 end
-Then(/^I should see a new post page$/) do
+Then(/^I should see the new post page$/) do
   expect(current_path).to eq(new_post_path)
 end
 When(/^I go to new post page$/) do
   visit new_post_path
 end
 When(/^I upload an image$/) do
-  attach_file 'image', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'post[image]', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
 end
 When(/^I input a caption$/) do
   fill_in "Caption", :with => 'Demo'
@@ -84,3 +84,16 @@ end
 When(/^I click on create post button$/) do
   click_button "Create Post"
 end
+Then(/^I should be redirected to the post page$/) do
+	expect(current_path).to eq('/posts/1')
+end
+Then(/^I should see my post$/) do
+  expect(page).to have_xpath("//img[contains(@src,'012_-_b8Du2Oq.jpg')]")
+  expect(page).to have_content('Demo')
+end
+Then(/^I should be able to edit$/) do
+  expect(page).to have_content('Edit')
+end
+
+
+
