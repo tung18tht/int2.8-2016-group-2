@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+`<% if user_signed_in? %>
 	<div class="centering">
 		<h1>Find friends</h1>
 		<p>Find people with the same interest</p>
@@ -10,7 +10,7 @@
 <% else %>
 	<div class="newUI" style="height: 800px;">
 		<div class="centering">
-			<img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px; " src="logoTinder.svg">
+			<img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px;" alt="Tinder" src="logoTinder.svg">
 			<br><h3 style="color:white;">Meet people, be friends, have fun.</h3>
 			<br>
 			<%= link_to "SIGN UP", new_user_registration_path, class: "buttonBig" %>

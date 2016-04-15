@@ -15,7 +15,8 @@
          <!--Brand image -->
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
-          <img alt="Tinder" src="">
+            <img style="height:150%; float:left;" alt="Tinder" src="logoTinderSmall.svg">
+            <span>Tinder</span>
           </a>
         </div>
         <!--Text-->
@@ -23,7 +24,7 @@
           <p class="navbar-text"><%= link_to 'My Profile', user_path(current_user) %> | <%= link_to 'New Post', new_post_path %> | <%= link_to 'Find Friends', users_path %></p>
           <p class = "navbar-text navbar-right" style="padding-right:30px">Signed in as <%= current_user.email %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %></p>
         <% else %>
-          <p class="navbar-text navbar-right" style="padding-right:30px"><%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %></p>
+          <p class="navbar-text navbar-right" style="padding-right:30px"><%= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path %></p>
         <% end %>
       </div>
     </nav>
