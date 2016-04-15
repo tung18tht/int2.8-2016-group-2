@@ -10,14 +10,14 @@
       </ul>
     </div>
   <% end %>
-  <div class="container2">
+  <div class="containerPost">
     <div class="centering" style="clear: both">
-      <%= f.file_field :image %>
+      <%= f.file_field :image, style: "margin: auto;" %>
     </div>
-    <%= f.label :caption %><br>
-    <%= f.text_field :caption, :size => 80 %>
-    <div class="btn">
-      <%= f.submit %>
+    <div style="margin-left: 30px; margin-right: 30px;">
+      <%= f.label :caption %><br>
+      <%= f.text_field :caption, style: "width: 80%; height: 50px; color: black;" %><br>
+      <%= f.submit "Post", class: "buttonSmall"  %>
     </div>
   </div>
 <% end %>

@@ -9,13 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body style="background-color: #EFEFEF;">
-    
-  
-    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: #FFB0AC;">
-      <div class="container-fluid">
-        
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color: white;">
+      <div class="container-fluid"> 
          <!--Brand image -->
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
@@ -29,14 +25,14 @@
         <% else %>
           <p class="navbar-text navbar-right" style="padding-right:30px"><%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path %></p>
         <% end %>
-        
       </div>
-
     </nav>
 <!--<p class="alert centering" style="color:green;"><%= notice %></p>-->
-        <p class="alert text-center" style="background-color: green; clear:both;"><%= alert %></p>
-    <div style="margin-top: 30px;">
-    <%= yield %>
-</div>
-  </body>
+      <% if user_signed_in? %>
+        <p class="alert text-center" style="background-color: green; clear:both; height:10px"><%= alert %></p>
+      <% end %>
+    <div style="margin-top: 20px;">
+        <%= yield %>
+    </div>
+</body>
 </html>

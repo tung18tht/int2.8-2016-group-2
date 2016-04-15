@@ -1,24 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container2 {
+.containerPost {
+	color: white;
 	width: 50%;
 	max-width: 750px;
-	background: #FFB0AC;
+	background-color: rgba(200, 200, 200, 0.4);
 	margin: 3em auto 0 auto;
 	border-radius: 10px;
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.4);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.4);
 	padding: 1em 0;
 	text-align: center;
 }
 .logform {
+	color: white;
 	width: 25%;
-	background: #FFB0AC;
+	background-color: rgba(200, 200, 200, 0.4);
 	margin: 3em auto 0 auto;
 	border-radius: 10px;
-	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.3);
-	box-shadow: 0 0 4px 4px rgba(0,0,0,.03);
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.4);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.4);
 	padding: 1em 0;
 	text-align: center;
 }
@@ -29,4 +31,54 @@
 #notice {
   color: green;
   text-align: center;
+}
+.buttonBig {
+	font-weight: bold;
+	margin: auto;
+	font-size: 25px;
+	width: 150px;
+	border-radius: 10px;
+	padding: 5px;
+	display: block;
+	border: 5px solid white;
+	background-color: transparent;
+	color: white;
+}
+.buttonSmall {
+	font-weight: bold;
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100px;
+	border-radius: 6px;
+	padding: 5px;
+	display: block;
+	border: 3px solid white;
+	background-color: transparent;
+	color: white;
+}
+.buttonBig:hover, .buttonSmall:hover {
+	color: #F16A53;
+	text-decoration: none;
+	background-color: white;
+}
+.newUI {
+	height: auto;
+	max-width: 100%;
+	background-repeat: no-repeat;
+	background-image: url("bg.jpg");
+	background-attachment: fixed;
+	/*background: #FFB0AC;*/
+}
+a {
+	color: #F16A53;
+	font-weight: bold;
+}
+a:hover{
+	color: black;
+	text-decoration: none;
+}
+.field {
+	color: black;
+	margin-bottom:5px;
 }

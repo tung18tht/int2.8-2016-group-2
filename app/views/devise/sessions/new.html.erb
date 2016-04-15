@@ -1,29 +1,26 @@
-<div class="centering"><h4>Sign in</h4>
+<div class="newUI" style="height: 800px; max-height: 100%">
+<div class="centering">
+  <img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px; " src="../logoTinder.svg">
+  <h3 style="color:white;">Log in</h3>
 <div class="logform">
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name))  do |f| %>
+    <%= f.label :email %>
+    <div class="field">     
+      <%= f.email_field :email, autofocus: true %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
+    <%= f.label :password %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+    <% end -%>
+    <div class="actions">
+      <%= f.submit "LOG IN", class: "buttonSmall" %>
+    </div>
+  <% end %>
 </div>
-Don't have an account? <%= link_to "Sign Up", new_user_registration_path %></div>
+<p style="color:white;margin-top: 10px;">Don't have an account? <%= link_to "Sign Up", new_user_registration_path %></p>
 <!--<%= render "devise/shared/links" %>-->
+</div>
