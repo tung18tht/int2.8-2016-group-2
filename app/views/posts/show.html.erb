@@ -7,7 +7,7 @@
       <h4 class="text-primary"><!--<%= @post.user.email %> --> <small style="color: black"><%= @post.caption %></small></h4>
       <p> 
       <div class="centering">
-      <%= link_to 'Back', posts_path %> |
+      <%= link_to 'Back', user_path(current_user) %> |
       <% if @post.user == current_user %>
         <%= link_to 'Edit', edit_post_path(@post) %> 
       <% end %>
