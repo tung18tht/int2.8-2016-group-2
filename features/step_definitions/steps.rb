@@ -98,8 +98,14 @@ Given(/^another logged in user$/) do
            })
 end
 When(/^I click on find friends$/) do
-  click_button "Find Friends"
+  click_on "Find Friends"
+end
+Then(/^I should see find friends tab$/) do
+  expect(page).to have_content('Find friends')
+end
+Then(/^I should see find friends intro$/) do
+  expect(page).to have_content('Find people with the same interest')
 end
 Then(/^I should see another logged in user$/) do
-  expect(page).to have_content('lol@gmail.com')
+  expect(page).to have_content('testing2@usth.edu.vn')
 end

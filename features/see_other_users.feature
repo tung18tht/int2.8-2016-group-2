@@ -7,4 +7,6 @@ Feature: See other users
   	Given a logged in user
   	Given another logged in user
   	When I click on find friends
+  	Then I should see find friends tab
+  	Then I should see find friends intro
   	Then I should see another logged in user
