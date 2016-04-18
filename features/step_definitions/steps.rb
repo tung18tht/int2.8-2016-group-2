@@ -8,7 +8,7 @@ Given(/^a logged in user$/) do
   visit new_user_session_path
   fill_in "Email", :with => 'testing@usth.edu.vn'
   fill_in "Password", :with => '12345678'
-  click_button "Log in"
+  click_button "LOG IN"
   visit root_path
   expect(page).to have_content("New Post")
 end
@@ -30,13 +30,10 @@ When(/^I fill in form$/) do
 	fill_in "Password confirmation", :with => '12345678'
 end
 When(/^I click on sign up button$/) do
-	click_button "Sign up"
+	click_button "SIGN UP"
 end
 Then(/^I should be redirected to home page$/) do
  	expect(current_path).to eq(root_path)
-end
-Then(/^I should see a welcome message$/) do
-  expect(page).to have_content("Welcome! You have signed up successfully.")
 end
 Then(/^I'm automatically logged in$/) do
   expect(page).to have_content("Signed in as testing@usth.edu.vn")
@@ -57,9 +54,6 @@ end
 #Signing out test
 When(/^I click on sign out$/) do
   click_on "Sign Out"
-end
-Then(/^I should see a Sign out success message$/) do
-  expect(page).to have_content("Signed out successfully.")
 end
 Then(/^I should see the Sign in button$/) do
   expect(page).to have_content("Sign In")
@@ -82,7 +76,7 @@ When(/^I input a caption$/) do
   fill_in "Caption", :with => 'Demo'
 end
 When(/^I click on create post button$/) do
-  click_button "Create Post"
+  click_button "Post"
 end
 Then(/^I should be redirected to the post page$/) do
 	expect(current_path).to eq('/posts/1')
@@ -95,5 +89,17 @@ Then(/^I should be able to edit$/) do
   expect(page).to have_content('Edit')
 end
 
-
-
+#Find another users
+Given(/^another logged in user$/) do
+   @user = User.create!({
+             :email => "testing2@usth.edu.vn",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
+end
+When(/^I click on find friends$/) do
+  click_button "Find Friends"
+end
+Then(/^I should see another logged in user$/) do
+  expect(page).to have_content('lol@gmail.com')
+end

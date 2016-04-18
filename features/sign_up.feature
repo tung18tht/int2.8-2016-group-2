@@ -13,5 +13,4 @@ Feature: Sign up
     And I fill in form
     And I click on sign up button
     Then I should be redirected to home page
-    And I should see a welcome message
     And I'm automatically logged in

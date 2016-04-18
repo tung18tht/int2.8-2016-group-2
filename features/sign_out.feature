@@ -7,6 +7,5 @@ Scenario: An user signing out
 Given a logged in user
 When I click on sign out
 Then I should be redirected to home page
-And I should see a Sign out success message
 And I should see the Sign in button
 
