@@ -1,31 +1,30 @@
 <div class="newUI" style="height: 800px;">
-<div class="centering">
-  <img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px; " src="../logoTinder.svg">
-  <h3 style="color:white;">Sign up and meet tons of friends</h3>
-</div>  
-<div class="logform">
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.label :email %>
-  <div class="field">
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  <%= f.label :password %>
-  <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <div class="centering">
+    <img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px; " src="../logoTinder.svg">
+    <h3 style="color:white;">Sign up and meet tons of friends</h3>
+  </div>  
+  <div class="logform">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <%= f.label :email %>
+    <div class="field">
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <%= f.label :password_confirmation %>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "SIGN UP", class: "buttonSmall" %>
+    </div>
   <% end %>
-  <div class="field">
-    <%= f.password_field :password, autocomplete: "off" %>
   </div>
-  <%= f.label :password_confirmation %>
-  <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "SIGN UP", class: "buttonSmall" %>
-  </div>
-<% end %>
-</div>
 </div>
 <!--<%= render "devise/shared/links" %> -->

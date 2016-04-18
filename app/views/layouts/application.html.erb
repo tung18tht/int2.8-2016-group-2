@@ -15,7 +15,7 @@
          <!--Brand image -->
         <div class="navbar-header">
           <a class="navbar-brand" href="/">
-            <img style="height:150%; float:left;" alt="" src="logoTinderSmall.svg">
+            <img style="height:100%; display: inline-block; margin-bottom: 10px;" alt="" src="logoTinderSmall.svg">
             <span>Tinder</span>
           </a>
         </div>
@@ -30,9 +30,9 @@
     </nav>
 <!--<p class="alert centering" style="color:green;"><%= notice %></p>-->
       <% if user_signed_in? %>
-        <p class="alert text-center" style="background-color: green; clear:both; height:10px"><%= alert %></p>
+        <p class="alert text-center" style="background-color: green; clear:both; height:15px"><%= alert %></p>
       <% end %>
-    <div style="margin-top: 20px;">
+    <div>
         <%= yield %>
     </div>
 </body>
