@@ -90,7 +90,7 @@ Then(/^I should be able to edit$/) do
 end
 
 #Find another users
-Given(/^another logged in user$/) do
+Given(/^another registered user$/) do
    @user = User.create!({
              :email => "testing2@usth.edu.vn",
              :password => "12345678",
@@ -106,6 +106,6 @@ end
 Then(/^I should see find friends intro$/) do
   expect(page).to have_content('Find people with the same interest')
 end
-Then(/^I should see another logged in user$/) do
+Then(/^I should see the other registered users$/) do
   expect(page).to have_content('testing2@usth.edu.vn')
 end

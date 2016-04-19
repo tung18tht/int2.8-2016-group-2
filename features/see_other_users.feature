@@ -5,8 +5,8 @@ Feature: See other users
 
   Scenario: Find other users
   	Given a logged in user
-  	Given another logged in user
+  	And another registered user
   	When I click on find friends
   	Then I should see find friends tab
-  	Then I should see find friends intro
-  	Then I should see another logged in user
+  	And I should see find friends intro
+  	And I should see the other registered users
