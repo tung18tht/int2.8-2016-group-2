@@ -9,8 +9,6 @@ Given(/^a logged in user$/) do
   fill_in "Email", :with => 'testing@usth.edu.vn'
   fill_in "Password", :with => '12345678'
   click_button "LOG IN"
-  visit root_path
-  expect(page).to have_content("New Post")
 end
 When(/^I go to the home page$/) do
 	visit root_path
@@ -109,3 +107,31 @@ end
 Then(/^I should see the other registered users$/) do
   expect(page).to have_content('testing2@usth.edu.vn')
 end
+
+#Edit post
+Given(/^I uploaded a post$/) do
+  visit new_post_path
+  attach_file 'post[image]', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  fill_in "Caption", :with => 'Demo'
+  click_button "Post"
+end
+When(/^I go to my profile$/) do
+  click_on "My Profile"
+end
+When(/^I click edit post$/) do
+  click_on "Edit"
+end
+Then(/^I should be redirected to the edit page$/) do
+  expect(current_path).to eq('/posts/1/edit')
+end
+When(/^I edit the caption$/) do
+  fill_in "Caption", :with => 'Edited demo'
+  click_button 'Post'
+end
+Then(/^I should be redirected my post$/) do
+  expect(current_path).to eq('/posts/1')
+end
+Then(/^I should see the new caption$/) do
+  expect(page).to have_content('Edited demo')
+end
+
