@@ -1,11 +1,24 @@
 <div class="centering">
   <h2><%= @user.email %></h1>
 
+ <!--  <%# if @profile.nil? %>
+    <%#= link_to 'New Profile', new_profile_path %>
+  <%# else %> -->
+    <%= render template: 'profiles/show' %>
+ <!--  <%# end %> -->
+
   <% @user_posts.each do |user_post| %>
       <div class="col-md-4">
         <div class="thumbnail">
-          <%= link_to (image_tag user_post.image.url(:medium)), post_path(user_post) %>
-       
+
+          <%= image_tag user_post.image.url(:medium) %>
+
+          <div class="caption">
+            <h4 class="text-primary"><%= @user.email %>
+              <small style="color: black"><%= user_post.caption %></small>
+            </h4>
+          </div>
+
           <% if user_post.user == current_user %>
             <p><%= link_to 'Edit', edit_post_path(user_post) %> | 
                <%= link_to 'Destroy', post_path(user_post), method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -15,4 +28,6 @@
         </div>
       </div>
   <% end %>
+
+  <%# end %>
 </div>
