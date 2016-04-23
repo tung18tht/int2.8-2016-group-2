@@ -3,8 +3,6 @@
 
   <% if @user.id == current_user.id %>
     <%= link_to 'New Profile', new_profile_path %>
-  <% else %>
-    <p> This user haven't creat a profile yet! </p>
   <% end %>
  
 <% else %>
@@ -42,4 +40,7 @@
     <%= link_to 'Edit', edit_profile_path(@profile) %> 
   <% end %>
 
+  <br>
+  <%= link_to 'New Post', new_post_path %>
+  
 <% end %>

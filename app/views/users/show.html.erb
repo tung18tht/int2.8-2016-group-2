@@ -1,11 +1,7 @@
 <div class="centering">
   <h2><%= @user.email %></h1>
 
- <!--  <%# if @profile.nil? %>
-    <%#= link_to 'New Profile', new_profile_path %>
-  <%# else %> -->
-    <%= render template: 'profiles/show' %>
- <!--  <%# end %> -->
+  <%= render template: 'profiles/show' %>
 
   <% @user_posts.each do |user_post| %>
       <div class="col-md-4">
@@ -14,7 +10,7 @@
           <%= image_tag user_post.image.url(:medium) %>
 
           <div class="caption">
-            <h4 class="text-primary"><%= @user.email %>
+            <h4 class="text-primary"><%= @profile.user_name %>
               <small style="color: black"><%= user_post.caption %></small>
             </h4>
           </div>
