@@ -14,8 +14,11 @@ Rails.application.routes.draw do
     end
   end
   resources :profiles
-  #resources :matches
-  get '/matches' => 'matches#index'
+  resources :matches do
+    member do
+      get :unlike_user
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
