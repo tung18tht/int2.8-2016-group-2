@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
+ 
+ 
+
   devise_for :users
   # devise_for :users, path: "users", path_names: { sign_in: 'sign_in', sign_out: 'sign_out', 
   #                                                 password: 'secret', confirmation: 'verification', 
   #                                                 unlock: 'unblock', registration: 'register', 
   #                                                   sign_up: 'sign_up' }
   resources :posts
-  resources :users
+  resources :users do
+    member do
+      get :like_user
+    end
+  end
   resources :profiles
+  #resources :matches
+  get '/matches' => 'matches#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

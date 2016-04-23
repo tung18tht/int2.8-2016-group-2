@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem "socialization"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'devise', '~> 3.5', '>= 3.5.6'

@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_one :profile
+  acts_as_liker
+  acts_as_likeable
 end

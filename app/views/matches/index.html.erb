@@ -1,0 +1,10 @@
+<h1>Matches#index</h1>
+<p>Find me in app/views/matches/index.html.erb</p>
+
+<h2>There are <%= @matches_count %> mathches</h2>
+
+<% @users.each do |user| %>
+    <% if current_user.likes?(user) && user.likes?(current_user) %>
+        <%= user.profile.user_name %>
+    <% end %>
+<% end %>
