@@ -6,9 +6,10 @@
 				<div class="row row-centered">
 					<div class="introText col-md-6 col-centered">
 						<h3>
-						<center><img class="bigLogo" alt="Tinder" src="logoTinder.svg"></center> <br>
-						Before using, you have to go to Your Profile and create one with your name, age, interest, etc. After that you can Find Friends in Tinder!
-						<%= link_to "Your Profile", user_path(current_user), class: "buttonBig", style: "width: 160px" %>
+						<center><img class="bigLogo" alt="Tinder" src="logoTinder.svg"> <br><br>
+						Before using, you have to go to Your Profile and create one with your name, age, interest, etc. After that you can Find Friends in Tinder!<br><br>
+						<%= link_to "Create your profile", new_profile_path, class: "buttonBig" %>
+						</center>
 						</h3>
 					</div>
 				</div>
