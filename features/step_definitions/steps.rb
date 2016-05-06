@@ -186,3 +186,63 @@ Given(/^another user who has a profile$/) do
   click_button "Create Profile"
   click_on "Sign Out"
 end
+
+# Profile
+When(/^I click on Create Profile$/) do
+  click_on "Create your profile"
+end
+
+Then(/^I should see the Create Profile page$/) do
+  expect(current_path).to eq(new_profile_path)
+end
+
+Then(/^I should see Create your profile button$/) do
+  expect(page).to have_content("Create your profile")
+end
+
+When(/^I fill my information$/) do 
+  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  fill_in "User name", :with => 'Test'
+  fill_in "Age", :with => '20'
+  select "Male", :from => "Gender"
+  fill_in "Location", :with => "Hanoi"
+  fill_in "Intro", :with => "Hello"
+  fill_in "Interest", :with => "sleep"
+  click_button "Create Profile"
+end
+
+Then(/^I should be redirected to the profile page$/) do
+  expect(current_path).to eq('/users/1')
+end
+
+Then(/^I should see my information$/) do
+  expect(page).to have_content('Test')
+  expect(page).to have_content('20')
+  expect(page).to have_content('Male')
+  expect(page).to have_content('Hanoi')
+  expect(page).to have_content('Hello')
+  expect(page).to have_content('sleep')
+end
+
+# Edit profile
+When(/^I click edit profile$/) do
+  click_on "Edit profile"
+end
+
+Then(/^I should be redirected to the edit profile page$/) do
+  expect(current_path).to eq("/profiles/1/edit")
+end
+
+When(/^I edit my information$/) do
+  fill_in "User name", :with => 'New test'
+  fill_in "Age", :with => '22'
+  click_button "Update Profile"
+end
+
+Then(/^I should see my new information$/) do
+  expect(page).to have_content('New test')
+  expect(page).to have_content('22')
+end
+
+#Like other profile
+
