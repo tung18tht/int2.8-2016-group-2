@@ -4,13 +4,15 @@ Feature: Add new post
   So that I can have posts
 
   Scenario: Users have a new post page
-    Given a logged in user
-    When I click on new post
+    Given an user who has a profile
+    When I go to my profile
+    And I click on new post
     Then I should see the new post page
 
   Scenario: Adding new post
-    Given a logged in user
-    When I go to new post page
+    Given an user who has a profile
+    When I go to my profile
+    And I click on new post
     And I upload an image
     And I input a caption
     And I click on create post button

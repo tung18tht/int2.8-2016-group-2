@@ -4,9 +4,9 @@ Feature: See other users
  	So that i can make friend with them
 
   Scenario: Find other users
-  	Given a logged in user
-  	And another registered user
+  	Given another user who has a profile
+  	And an user who has a profile
   	When I click on find friends
-  	Then I should see find friends tab
+  	Then I should see Find Friends
   	And I should see find friends intro
-  	And I should see the other registered users
+  	And I should see the other users

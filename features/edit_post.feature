@@ -4,7 +4,7 @@ Feature: Edit post
   So that I can change the mistakes I made
 
   Scenario: Users edit post
-    Given a logged in user
+    Given an user who has a profile
     And I uploaded a post
     When I go to my profile
     And I click edit post

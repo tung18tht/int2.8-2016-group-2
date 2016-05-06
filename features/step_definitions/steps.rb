@@ -48,6 +48,13 @@ end
 Then(/^I should see the Sign out option$/) do
   expect(page).to have_content("Sign Out")
 end
+Then(/^I should see Find Friends$/) do
+  expect(page).to have_content("Find Friends")
+end
+Then(/^I should see Matches$/) do
+  expect(page).to have_content("Matches")
+end
+
 
 #Signing out test
 When(/^I click on sign out$/) do
@@ -87,27 +94,6 @@ Then(/^I should be able to edit$/) do
   expect(page).to have_content('Edit')
 end
 
-#Find another users
-Given(/^another registered user$/) do
-   @user = User.create!({
-             :email => "testing2@usth.edu.vn",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-           })
-end
-When(/^I click on find friends$/) do
-  click_on "Find Friends"
-end
-Then(/^I should see find friends tab$/) do
-  expect(page).to have_content('Find friends')
-end
-Then(/^I should see find friends intro$/) do
-  expect(page).to have_content('Find people with the same interest')
-end
-Then(/^I should see the other registered users$/) do
-  expect(page).to have_content('testing2@usth.edu.vn')
-end
-
 #Edit post
 Given(/^I uploaded a post$/) do
   visit new_post_path
@@ -134,4 +120,69 @@ end
 Then(/^I should see the new caption$/) do
   expect(page).to have_content('Edited demo')
 end
+Then(/^I should not see my post$/) do 
+  expect(page).to have_no_content('Demo')
+end
+When(/^I click delete post$/) do
+  click_on "Destroy"
+end
 
+
+
+#Find another users
+
+When(/^I click on find friends$/) do
+  click_on "Find Friends"
+end
+Then(/^I should see find friends tab$/) do
+  expect(page).to have_content('Find friends')
+end
+Then(/^I should see find friends intro$/) do
+  expect(page).to have_content('Find people with the same interest')
+end
+Then(/^I should see the other users$/) do
+  expect(page).to have_content('Test2')
+end
+
+Given(/^an user who has a profile$/) do
+   @user = User.create!({
+             :email => "testing@usth.edu.vn",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
+  visit new_user_session_path
+  fill_in "Email", :with => 'testing@usth.edu.vn'
+  fill_in "Password", :with => '12345678'
+  click_button "LOG IN"
+  visit new_profile_path
+  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  fill_in "User name", :with => 'Test'
+  fill_in "Age", :with => '20'
+  select "Male", :from => "Gender"
+  fill_in "Location", :with => "Hanoi"
+  fill_in "Intro", :with => "Hello"
+  fill_in "Interest", :with => "sleep"
+  click_button "Create Profile"
+end
+
+Given(/^another user who has a profile$/) do
+   @user = User.create!({
+             :email => "testing2@usth.edu.vn",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
+  visit new_user_session_path
+  fill_in "Email", :with => 'testing2@usth.edu.vn'
+  fill_in "Password", :with => '12345678'
+  click_button "LOG IN"
+  visit new_profile_path
+  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  fill_in "User name", :with => 'Test2'
+  fill_in "Age", :with => '20'
+  select "Male", :from => "Gender"
+  fill_in "Location", :with => "Hanoi"
+  fill_in "Intro", :with => "Hello"
+  fill_in "Interest", :with => "sleep"
+  click_button "Create Profile"
+  click_on "Sign Out"
+end
