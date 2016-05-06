@@ -36,9 +36,6 @@ end
 Then(/^I'm automatically logged in$/) do
   expect(page).to have_content("Signed in as testing@usth.edu.vn")
 end
-Then(/^I should see the New post option$/) do
-  expect(page).to have_content("New Post")
-end
 Then(/^I should see my email$/) do
   expect(page).to have_content("Signed in as testing@usth.edu.vn")
 end
@@ -70,9 +67,6 @@ When(/^I click on new post$/) do
 end
 Then(/^I should see the new post page$/) do
   expect(current_path).to eq(new_post_path)
-end
-When(/^I go to new post page$/) do
-  visit new_post_path
 end
 When(/^I upload an image$/) do
   attach_file 'post[image]', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'

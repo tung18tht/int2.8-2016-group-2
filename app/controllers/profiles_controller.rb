@@ -3,9 +3,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   # GET /profiles
   # GET /profiles.json
-  def index
-    @profiles = Profile.all
-  end
+  # def index
+  #   @profiles = Profile.all
+  # end
 
   # GET /profiles/1
   # GET /profiles/1.json
