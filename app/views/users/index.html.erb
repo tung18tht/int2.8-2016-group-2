@@ -1,9 +1,22 @@
 <% if user_signed_in? %>
-
-	<% if current_user.profile.nil? %>
-		<p> WELCOME TO TINDER. You must go to Your Profile and create one with your name, age, interest, etc. After that you can Find Friends in Tinder!</p>
+	<div class="newUI">
+		<% if current_user.profile.nil? %>
+			<center>
+				<div class="newUI">
+				<div class="row row-centered">
+					<div class="introText col-md-6 col-centered">
+						<h3>
+						<center><img class="bigLogo" alt="Tinder" src="logoTinder.svg"></center> <br>
+						Before using, you have to go to Your Profile and create one with your name, age, interest, etc. After that you can Find Friends in Tinder!
+						<%= link_to "Your Profile", user_path(current_user), class: "buttonBig", style: "width: 160px" %>
+						</h3>
+					</div>
+				</div>
+				</div>		
+			</center>
+	</div>
 	<% else %>
-		<div class="centering">
+		<div class="centering whiteText">
 			<h1>Find friends</h1>
 			<p>Find people with the same interest</p>
 
@@ -24,9 +37,9 @@
 	<% end %>
 
 <% else %>
-	<div class="newUI" style="height: 900px;">
-		<div class="centering">
-			<img style="margin: auto; padding-top: 100px; width:30%; max-width: 400px;" alt="Tinder" src="logoTinder.svg">
+	<div class="newUI">
+		<div class="introText">
+			<img class="bigLogo" alt="Tinder" src="logoTinder.svg">
 			<br><h3 style="color:white;">Meet people, be friends, have fun.</h3>
 			<br>
 			<%= link_to "SIGN UP", new_user_registration_path, class: "buttonBig" %>

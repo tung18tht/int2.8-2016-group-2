@@ -1,3 +1,4 @@
+<center>
 <%= form_for @profile, html: { multipart: true } do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
@@ -25,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
+    <%= f.collection_select :gender, Profile::GENDERS, :to_s, :to_s  %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
@@ -39,11 +40,12 @@
     <%= f.label :interest %><br>
     <%= f.text_area :interest %>
   </div>
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
+  </div>-->
+  <div class="actions" style="color:black;">
     <%= f.submit %>
   </div>
 <% end %>
+</center>

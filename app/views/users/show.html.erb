@@ -1,8 +1,6 @@
+<div class="newUI">
 <div class="centering">
-  <h2><%= @user.email %></h1>
-
   <%= render template: 'profiles/show' %>
-
   <% @user_posts.each do |user_post| %>
       <div class="col-md-4">
         <div class="thumbnail">
@@ -26,4 +24,5 @@
   <% end %>
 
   <%# end %>
+</div>
 </div>

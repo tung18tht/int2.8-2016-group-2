@@ -17,16 +17,36 @@
 	color: white;
 	width: 25%;
 	background-color: rgba(200, 200, 200, 0.4);
-	margin: 3em auto 0 auto;
+	/*margin: 3em auto 0 auto;*/
 	border-radius: 10px;
 	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.4);
 	box-shadow: 0 0 4px 4px rgba(0,0,0,.4);
-	padding: 1em 0;
+	padding-top: 10px;
+	margin: 20px auto 0 auto;
 	text-align: center;
+}
+.profile{
+	/*background-color: #f05f40;*/
+	padding-top: 40px;
+	margin: 20px auto 0 auto;
+	color: white;
+	background-color: rgba(200, 200, 200, 0.4);
+	border-radius: 10px;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.4);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.4);
+}
+.profile a{
+	color: white;
+}
+.profile p{
+	font-size: 1.3em;
 }
 .centering {
 	margin: 20px;
 	text-align: center;
+}
+.whiteText{
+	color: #FFF;
 }
 #notice {
   color: green;
@@ -63,8 +83,9 @@
 	background-color: white;
 }
 .newUI {
-	height: auto;
+	height: 900px;
 	max-width: 100%;
+	padding-top: 40px;
 	background-repeat: no-repeat;
 	background-image: url("bg.jpg");
 	background-attachment: fixed;
@@ -81,4 +102,24 @@ a:hover{
 .field {
 	color: black;
 	margin-bottom:5px;
+}
+.introText{
+	padding-top: 100px;
+	color: white;
+	text-align: center;
+}
+.bigLogo{
+	margin: auto;  
+	width:30%; 
+	max-width: 400px;
+}
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+	text-align: center;
+    display:inline-block;
+    float:none;
+    text-align:left;    
+    margin-right:-4px;
 }

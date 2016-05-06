@@ -1,5 +1,7 @@
-<h1>New Profile</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', profiles_path %>
+<div class="newUI">
+	<div class="logform">
+	<h1>Editing Profile</h1>
+	<%= render 'form' %>
+	<%= link_to 'Back', user_path(current_user)  %>
+	</div>
+</div>

@@ -1,9 +1,12 @@
-<h2>There are <%= @matches_count %> mathches</h2>
-
-<% @users.each do |user| %>
-    <% if current_user.likes?(user) %>
-    <ul>
-        <li><%= link_to (user.profile.user_name), user_path(user) %> | <%= link_to 'Unlike', unlike_user_match_path(user) %></li>
-    </ul>
-    <% end %>
-<% end %>
+<div class="newUI">
+	<div class="centering whiteText">
+		<h2>There are <%= @matches_count %> mathches</h2>
+		<% @users.each do |user| %>
+		    <% if current_user.likes?(user) %>
+		    <ul>
+		        <li><%= link_to (user.profile.user_name), user_path(user) %> | <%= link_to 'Unlike', unlike_user_match_path(user) %></li>
+		    </ul>
+		    <% end %>
+		<% end %>
+	</div>
+</div>
