@@ -6,5 +6,12 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @user_posts = @user.posts
+        @profile = @user.profile
+    end
+    
+    def like_user
+        @user = User.find(params[:id])
+        current_user.like!(@user)
+        redirect_to users_path
     end
 end
