@@ -4,7 +4,7 @@
 		<% @users.each do |user| %>
 		    <% if current_user.likes?(user) %>
 		    <ul>
-		        <li><%= link_to (user.profile.user_name), user_path(user) %> | <%= link_to 'Unlike', unlike_user_match_path(user) %></li>
+		        <li><%= link_to (user.profile.user_name), user_path(user) %> | <%= link_to 'Unlike', unlike_user_match_path(user), :method => :delete, data: { confirm: 'Are you sure?' } %></li>
 		    </ul>
 		    <% end %>
 		<% end %>

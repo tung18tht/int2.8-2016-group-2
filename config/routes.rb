@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   resources :posts
   resources :users do
     member do
-      get :like_user
+      post :like_user
     end
   end
   resources :profiles
   resources :matches do
     member do
-      get :unlike_user
+      delete :unlike_user
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
