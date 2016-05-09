@@ -1,5 +1,5 @@
 <div class="row row-centered">
-  <div class="profile col-md-6 col-centered">
+  <div class="profile col-md-6 col-xs-8 col-centered">
     <% if @profile.nil? %>
       <% if @user.id == current_user.id %>
         <center>
@@ -10,7 +10,9 @@
     <% else %>
       <div class="row row-centered">
         <div class="col-md-6 ">
-          <%= image_tag @profile.avatar.url(:medium) %>
+          <center>
+          <%= image_tag @profile.avatar.url(:medium), :class => 'img-responsive' %>
+          </center>
         </div>
         <div class="col-md-6">
           <p>

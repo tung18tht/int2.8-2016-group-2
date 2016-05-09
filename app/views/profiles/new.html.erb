@@ -1,7 +1,11 @@
 <div class="newUI">
-	<div class="logform">
-	<h1>Editing Profile</h1>
-	<%= render 'form' %>
-	<%= link_to 'Back', user_path(current_user)  %>
+	<div class="row row-centered">
+		<div class="logform col-md-4 col-xs-8 col-centered">
+			<center>
+				<h2>Editing Profile</h2>
+				<%= render 'form' %>
+				<%= link_to 'Back', user_path(current_user)  %>
+			</center>
+		</div>
 	</div>
 </div>

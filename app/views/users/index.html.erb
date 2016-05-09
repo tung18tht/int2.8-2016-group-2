@@ -17,7 +17,7 @@
 			</center>
 	</div>
 	<% else %>
-		<div class="centering whiteText">
+		<div class="centering whiteText row-centered">
 			<h1>Find friends</h1>
 			<p>Find people with the same interest</p>
 
@@ -26,7 +26,7 @@
 			    <% next if user.profile.nil? %>
 			    <% next if current_user.likes?(user) %>
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
-			    <div class="col-md-4 col-md-offset-4">
+			    <div class="col-md-4 col-xs-8 col-centered">
 				  <div class="thumbnail">
 					  <h2 class="text-primary"><%= link_to (user.profile.user_name), user_path(user) %></h2>
 					  <%= image_tag user.profile.avatar.url(:medium) %>

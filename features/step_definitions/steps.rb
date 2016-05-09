@@ -118,7 +118,7 @@ Then(/^I should not see my post$/) do
   expect(page).to have_no_content('Demo')
 end
 When(/^I click delete post$/) do
-  click_on "Destroy"
+  click_on "Delete"
 end
 
 

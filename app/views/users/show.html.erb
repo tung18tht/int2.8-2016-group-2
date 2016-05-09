@@ -2,7 +2,7 @@
 <div class="centering">
   <%= render template: 'profiles/show' %>
   <% @user_posts.each do |user_post| %>
-      <div class="col-md-4">
+      <div class="col-md-4 col-xs-6">
         <div class="thumbnail">
 
           <%= image_tag user_post.image.url(:medium) %>
@@ -15,7 +15,7 @@
 
           <% if user_post.user == current_user %>
             <p><%= link_to 'Edit', edit_post_path(user_post) %> | 
-               <%= link_to 'Destroy', post_path(user_post), method: :delete, data: { confirm: 'Are you sure?' } %>
+               <%= link_to 'Delete', post_path(user_post), method: :delete, data: { confirm: 'Are you sure?' } %>
             </p>
           <% end %>
            
