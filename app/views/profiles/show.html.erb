@@ -1,5 +1,5 @@
 <div class="row row-centered">
-  <div class="profile col-md-6 col-xs-8 col-centered">
+  <div class="profile col-md-6 col-xs-12 col-centered">
     <% if @profile.nil? %>
       <% if @user.id == current_user.id %>
         <center>
@@ -9,43 +9,50 @@
       <% end %>
     <% else %>
       <div class="row row-centered">
-        <div class="col-md-6 ">
+        <div class="col-md-6 col-xs-12">
           <center>
-          <%= image_tag @profile.avatar.url(:medium), :class => 'img-responsive' %>
+          <%= image_tag @profile.avatar.url(:medium), :class => 'img-thumbnail' %>
           </center>
         </div>
-        <div class="col-md-6">
-          <p>
-            <strong>User name:</strong>
-            <%= @profile.user_name %>
-          </p>
-          <p>
-            <strong>Age:</strong>
-            <%= @profile.age %>
-          </p>
-          <p>
-            <strong>Gender:</strong>
-            <%= @profile.gender %>
-          </p>
-          <p>
-            <strong>Location:</strong>
-            <%= @profile.location %>
-          </p>
-          <p>
-            <strong>Intro:</strong>
-            <%= @profile.intro %>
-          </p>
-          <p>
-            <strong>Interest:</strong>
-            <%= @profile.interest %>
-          </p>
+        <div class="col-md-6 col-xs-12 col-centered">
+          <div class="info-container">
+            <div class="big-font">
+                <%= @profile.user_name %>, <%= @profile.age %>, <%= @profile.gender %>
+            </div>
+            <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @profile.location %><br>
+            Intro: <%= @profile.intro %> <br>
+            Interest: <%= @profile.interest %>
+            <!-- <tr>
+              <td>Name: </td>
+              <td><%= @profile.user_name %></td>
+            <tr>
+            <tr>
+              <td>Age: </td>
+              <td><%= @profile.age %></td>
+            <tr>
+            <tr>
+              <td>Gender: </td>
+              <td><%= @profile.gender %></td>
+            <tr>
+            <tr>
+              <td>Location: </td>
+              <td><%= @profile.location %></td>
+            <tr>
+            <tr>
+              <td>Intro: </td>
+              <td><%= @profile.intro %></td>
+            <tr>
+            <tr>
+              <td>Interest: </td>
+              <td><%= @profile.interest %></td>
+            <tr> -->
+          </div>
         </div>
       </div>
       <div class="centering">
         <% if @profile.user_id == current_user.id %>
-            <%= link_to 'Edit profile', edit_profile_path(@profile) %> 
-            <br>
-            <%= link_to 'New Post', new_post_path %>
+            <%= link_to 'Edit profile', edit_profile_path(@profile), :class => 'btn' %> 
+            <%= link_to 'New Post', new_post_path, :class => 'btn' %>
         <% end %>
       </div>
     <% end %>

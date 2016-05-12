@@ -28,9 +28,18 @@
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
 			    <div class="col-md-4 col-xs-8 col-centered">
 				  <div class="thumbnail">
-					  <h2 class="text-primary"><%= link_to (user.profile.user_name), user_path(user) %></h2>
-					  <%= image_tag user.profile.avatar.url(:medium) %>
-					  <p><%= link_to 'Like', like_user_user_path(user), :method => :post %></p>
+					<h2 class="text-primary"><%= link_to (user.profile.user_name), user_path(user) %></h2>
+					<%= image_tag user.profile.avatar.url(:medium) %>
+					<br>
+					<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
+		            		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+		            <% end %>
+		            <%= link_to "#",:class => 'users-button dislike-button' do %>
+		            		<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+		            <% end %>
+		            <%= link_to "#",:class => 'users-button super-like-button' do %>
+		            		<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+		            <% end %>
 				  </div>
 				</div>
 			<% end %>

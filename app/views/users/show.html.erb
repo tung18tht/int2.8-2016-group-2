@@ -2,11 +2,9 @@
 <div class="centering">
   <%= render template: 'profiles/show' %>
   <% @user_posts.each do |user_post| %>
-      <div class="col-md-4 col-xs-6">
+      <div class="col-md-4 col-xs-12">
         <div class="thumbnail">
-
           <%= image_tag user_post.image.url(:medium) %>
-
           <div class="caption">
             <h4 class="text-primary"><%= @profile.user_name %>
               <small style="color: black"><%= user_post.caption %></small>
