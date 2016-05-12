@@ -26,11 +26,18 @@
 			    <% next if user.profile.nil? %>
 			    <% next if current_user.likes?(user) %>
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
-			    <div class="col-md-4 col-xs-8 col-centered">
+			    <div class="col-md-4 col-xs-10 col-centered">
 				  <div class="thumbnail">
-					<h2 class="text-primary"><%= link_to (user.profile.user_name), user_path(user) %></h2>
+				 	<h2 class="text-primary">
+						<%= link_to user_path(user) do %>
+			                <%= user.profile.user_name %>, <%= user.profile.age %>
+			            <% end %>
+		            </h2>
 					<%= image_tag user.profile.avatar.url(:medium) %>
 					<br>
+					<div class="big-font blackText">
+		                <%= user.profile.intro %>
+		            </div>
 					<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
 		            		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
 		            <% end %>
