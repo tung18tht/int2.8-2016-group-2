@@ -10,6 +10,11 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    if @profile.gender == 'Male'
+      @gender_icon = 'fa fa-mars'
+    else
+      @gender_icon = 'fa fa-venus'
+    end
   end
 
   # GET /profiles/new

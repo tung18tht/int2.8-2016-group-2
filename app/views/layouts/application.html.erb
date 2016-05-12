@@ -6,6 +6,7 @@
     <link rel="icon" href="../favicon.ico" type="image/x-icon"/>
     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'hover' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -23,24 +24,34 @@
         <% if user_signed_in? %>
           <p class="navbar-text">
             <% if current_user.profile.nil? %>
-              <%= link_to 'Create Profile', new_profile_path %>
+              <%= link_to new_profile_path do %>
+                <span class="navbar-url">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Create Profile
+                </span>
+              <% end %>
             <% else %>
               <!--<%= link_to 'My Profile', user_path(current_user) %>-->
               <%= link_to user_path(current_user) do %>
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Profile
+                <span class="navbar-url">
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> My Profile
+                </span>
               <% end %>
-            <% end %> | <%#= link_to 'New Post', new_post_path %>  
+            <% end %> <%#= link_to 'New Post', new_post_path %>  
             <%= link_to users_path do %>
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Find Friends
-            <% end %>| 
+              <span class="navbar-url">
+                <span class="fa fa-group" aria-hidden="true"></span> Find Friends
+              </span>
+            <% end %>  
             <%= link_to matches_path do %>
+              <span class="navbar-url">
                 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> Matches
+              </span>
             <% end %>
           </p>
 
           <p class = "navbar-text navbar-right" style="padding-right:30px">Signed in as <%= current_user.email %> | <%= link_to "Sign Out", destroy_user_session_path, :method => :delete  %></p>
         <% else %>
-          <p class="navbar-text navbar-right" style="padding-right:30px"><%= link_to "Sign Up", new_user_registration_path %> | <%= link_to "Sign In", new_user_session_path %></p>
+          <p class="navbar-text navbar-right" style="padding-right:30px"><%= link_to "Sign Up", new_user_registration_path %>  <%= link_to "Sign In", new_user_session_path %></p>
         <% end %>
       </div>
     </nav>

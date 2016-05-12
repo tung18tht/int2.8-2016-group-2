@@ -1,26 +1,30 @@
 <div class="newUI">
 <div class="centering">
   <%= render template: 'profiles/show' %>
+  <div class="row row-centered">
   <% @user_posts.each do |user_post| %>
-      <div class="col-md-4 col-xs-12">
-        <div class="thumbnail">
-          <%= image_tag user_post.image.url(:medium) %>
+  
+      <div class="col-md-4 col-xs-10 col-centered">
+        <div class="post-container">
+          <div class="photo" style="background-image: url('<%=user_post.image.url%>')"></div>
+          <!--<%= image_tag user_post.image.url(:medium) %>-->
           <div class="caption">
-            <h4 class="text-primary"><%= @profile.user_name %>
+            <h4 class="text-primary">
+              <%= @profile.user_name %>
               <small style="color: black"><%= user_post.caption %></small>
             </h4>
           </div>
 
           <% if user_post.user == current_user %>
-            <p><%= link_to 'Edit', edit_post_path(user_post) %> | 
-               <%= link_to 'Delete', post_path(user_post), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <p><%= link_to 'Edit', edit_post_path(user_post), class: 'btn' %> 
+               <%= link_to 'Delete', post_path(user_post),class: 'btn', method: :delete, data: { confirm: 'Are you sure?' } %>
             </p>
           <% end %>
            
         </div>
       </div>
   <% end %>
-
+  </div>
   <%# end %>
 </div>
 </div>

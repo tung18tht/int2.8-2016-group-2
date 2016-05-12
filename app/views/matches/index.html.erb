@@ -1,11 +1,40 @@
-<div class="newUI">
-	<div class="centering whiteText">
-		<h2>There are <%= @matches_count %> matches</h2>
+
+<div class="centering whiteText">
+	<br>
+	<h2>
+		<% if @matches_count == 0 %>
+			No match yet ! Keep liking people !
+		<% else %>
+			There 
+			<% if @matches_count == 1 %>
+				is 1 match.
+			<% else %>
+				are <%= @matches_count %> matches.
+			<% end %>
+		<% end %>
+	</h2>
+	<div class="row row-centered">
 		<% @users.each do |user| %>
 		    <% if current_user.likes?(user) %>
-		    <ul>
-		        <li><%= link_to (user.profile.user_name), user_path(user) %> | <%= link_to 'Unlike', unlike_user_match_path(user), :method => :delete, data: { confirm: 'Are you sure?' } %></li>
-		    </ul>
+		    <div class="col-md-4 col-xs-10 col-centered profile-container profile-display">
+			    	<div class="row">		
+			    		<div class="col-md-12 col-xs-12">
+						 	<h2 class="no-margin-top">
+								<%= link_to user_path(user) do %>
+					                <%= user.profile.user_name %>
+					            <% end %>
+				            </h2>
+			            	<div class="photo" style="background-image: url('<%=user.profile.avatar.url%>')"></div>
+							<br>
+							<%= link_to unlike_user_match_path(user),:class => 'users-button dislike-button', :method => :delete, data: { confirm: 'Are you sure?' } do %>
+				            		<span class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
+				            <% end %>
+				            <%= link_to "#",:class => 'users-button super-like-button' do %>
+				            		<span class="fa fa-comments hvr-bounce-in" aria-hidden="true"></span>
+				            <% end %>
+				        </div>
+					</div>
+				</div>
 		    <% end %>
 		<% end %>
 	</div>

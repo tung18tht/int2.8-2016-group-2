@@ -59,3 +59,4 @@ group :test, :development do
 end
 
 gem 'simplecov', :require => false, :group => :test
+gem 'font-awesome-sass'

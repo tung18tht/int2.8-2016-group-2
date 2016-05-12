@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
+.navbar-url {
+	margin-right: 20px;
+}
+.no-margin-top {
+	margin-top: 0px !important;
+}
 .containerPost {
 	color: white;
 	width: 50%;
@@ -120,14 +128,25 @@ a:hover{
     text-align:center;    
     margin-right:-4px;
 }
-.img-thumbnail {
-	width: 100%;
+.photo {
+	position: relative;
+    width: 100%;
+    padding-bottom : 50%;
+	background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
-.profile-table {
-	margin: 20px auto 20px auto;
-	width: 100%;
-	text-align: left;
-	font-size: 1.4em;
+.profile-container{
+	padding: 20px;
+	margin: 30px auto 40px auto;
+	border-radius: 5px;
+	background-color: white;
+	-webkit-box-shadow: 0 0 4px 3px rgba(0,0,0,.4);
+	box-shadow: 0 0 4px 4px rgba(0,0,0,.4);
+}
+.profile-display {
+	margin-left: 30px !important;
+	margin-right: 30px !important;
 }
 .info-container {
 	margin: 20px auto 20px auto;
@@ -141,28 +160,45 @@ a:hover{
 .btn {
 	display: inline-block;
 	font-weight: bold;
-	background-color: transparent;
+	color: white;
+	background-color: #F16A53;
 	margin: 10px;
-	border: 2px solid white;
+	border: 5px solid #F16A53;
+	transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
 }
 .btn:hover {
 	background-color: white;
 	color: #F16A53;
+	transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
 }
 .users-button {
 	display: inline-block;
 	font-size: 5em;
-	padding: 0 10px;
+	margin: 0 10px;
 }
-.like-button {
-	color: #3FD73F;
+.like-button, .like-button:hover {
+	color: #3FD73F !important;
 }
-.dislike-button {
-	color: #DE3333;
+.dislike-button, .dislike-button:hover {
+	color: #DE3333 !important;
 }
-.super-like-button {
-	color: #33DEBC;
+.super-like-button,.super-like-button:hover {
+	color: #33DEBC !important;
 }
 .blackText {
 	color: black;
+}
+.post-container {
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+}
+.caption {
+	text-align: left;
 }

@@ -26,30 +26,33 @@
 			    <% next if user.profile.nil? %>
 			    <% next if current_user.likes?(user) %>
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
-			    <div class="col-md-4 col-xs-10 col-centered">
-				  <div class="thumbnail">
-				 	<h2 class="text-primary">
-						<%= link_to user_path(user) do %>
-			                <%= user.profile.user_name %>, <%= user.profile.age %>
-			            <% end %>
-		            </h2>
-					<%= image_tag user.profile.avatar.url(:medium) %>
-					<br>
-					<div class="big-font blackText">
-		                <%= user.profile.intro %>
-		            </div>
-					<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
-		            		<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-		            <% end %>
-		            <%= link_to "#",:class => 'users-button dislike-button' do %>
-		            		<span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-		            <% end %>
-		            <%= link_to "#",:class => 'users-button super-like-button' do %>
-		            		<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-		            <% end %>
-				  </div>
+			    <div class="col-md-4 col-xs-10 col-centered profile-container">
+			    	<div class="row">		
+			    		<div class="col-md-12 col-xs-12">
+						 	<h2 class="no-margin-top">
+								<%= link_to user_path(user) do %>
+					                <%= user.profile.user_name %>, <%= user.profile.age %>
+					            <% end %>
+				            </h2>
+			            	<div class="photo" style="background-image: url('<%=user.profile.avatar.url%>')"></div>
+							<br>
+							<div class="big-font blackText">
+		                		<%= user.profile.intro %>
+		           			 </div>
+							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
+				            		<span class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
+				            <% end %>
+				            <%= link_to "#",:class => 'users-button dislike-button' do %>
+				            		<span class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
+				            <% end %>
+				            <%= link_to "#",:class => 'users-button super-like-button' do %>
+				            		<span class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
+				            <% end %>
+				        </div>
+					</div>
 				</div>
 			<% end %>
+				
 		</div>
 	<% end %>
 
