@@ -1,9 +1,9 @@
-<div class="centering">
-<h4>Editing Post</h4>
 
-<%= image_tag @post.image.url(:medium)%>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', user_path(current_user) %>
-</div>
+	<div class="row row-centered">
+		<div class="centering col-md-4 col-centered col-xs-8 logform">
+		<h1 style="margin-top: 50px; color: white;">Edit post</h1>
+			<%= image_tag @post.image.url(:medium), :class => 'post-photo' %>
+			<%= render 'form' %>
+			<%= link_to 'Back', user_path(current_user)%>
+		</div>
+	</div>
