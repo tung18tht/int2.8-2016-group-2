@@ -25,6 +25,7 @@
 			    <% next if user.id == current_user.id %>
 			    <% next if user.profile.nil? %>
 			    <% next if current_user.likes?(user) %>
+			    <% next if current_user.follows?(user) %>
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
 			    <div class="col-md-4 col-xs-10 col-centered profile-container">
 			    	<div class="row">		
@@ -45,9 +46,19 @@
 				            <%= link_to "#",:class => 'users-button dislike-button' do %>
 				            		<span class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
-				            <%= link_to "#",:class => 'users-button super-like-button' do %>
-				            		<span class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
-				            <% end %>
+				            <% if current_user.followed_by?(user) %>
+					            <h3 class="no-margin-top" style = "color: blue">
+									<% if user.profile.gender == 'Male' %> 
+										He has superliked you!
+									<% else %>
+										She has superliked you!
+									<% end %>	
+					            </h3>
+					        <% else %>
+					         	<%= link_to superlike_user_user_path(user),:class => 'users-button super-like-button', :method => :post do %>
+					            		<span class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
+					            <% end %> 
+					        <% end %>  
 				        </div>
 					</div>
 				</div>

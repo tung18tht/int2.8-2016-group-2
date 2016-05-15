@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :users do
     member do
-      post :like_user
+      post :like_user, :superlike_user
     end
   end
   resources :profiles
