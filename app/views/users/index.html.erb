@@ -22,12 +22,11 @@
 			<p>Find people with the same interest</p>
 
 			<% @users.each do |user| %>
-			    <% next if user.id == current_user.id %>
-			    <% next if user.profile.nil? %>
-			    <% next if current_user.likes?(user) %>
-			    <% next if current_user.follows?(user) %>
+<<<<<<< HEAD
+=======
+>>>>>>> a1f6c3422e5615bbaa51e6d9c62127151adb3d20
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
-			    <div class="col-md-4 col-xs-10 col-centered profile-container">
+			    <div class="col-md-4 col-xs-10 col-centered profile-container profile-display">
 			    	<div class="row">		
 			    		<div class="col-md-12 col-xs-12">
 						 	<h2 class="no-margin-top">
@@ -39,6 +38,7 @@
 							<br>
 							<div class="big-font blackText">
 		                		<%= user.profile.intro %>
+		                		<!-- <br>Common interest: <%= @common_interest[user.id] %> -->
 		           			 </div>
 							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
 				            		<span class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
