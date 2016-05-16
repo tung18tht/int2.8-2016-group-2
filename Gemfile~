@@ -60,4 +60,3 @@ end
 
 gem 'simplecov', :require => false, :group => :test
 gem 'font-awesome-sass'
-gem 'rails_12factor', group: :production
