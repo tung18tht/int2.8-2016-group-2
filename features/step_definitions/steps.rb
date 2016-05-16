@@ -212,7 +212,6 @@ end
 Then(/^I should see my information$/) do
   expect(page).to have_content('Test')
   expect(page).to have_content('20')
-  expect(page).to have_content('Male')
   expect(page).to have_content('Hanoi')
   expect(page).to have_content('Hello')
   expect(page).to have_content('sleep')
