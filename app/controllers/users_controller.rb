@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     def superlike_user
         @user = User.find(params[:id])
         current_user.follow!(@user)
+        current_user.like!(@user)
         redirect_to users_path
     end
 end
