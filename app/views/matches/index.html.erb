@@ -3,7 +3,13 @@
 	<br>
 	<h2>
 		<% if @matches_count == 0 %>
-			No match yet ! Keep liking people !
+			<div class="newUI">
+				<div class="introText">
+					<br><h3 style="color:white;">No match yet!</h3>
+					<br>
+					<%= link_to "Keep liking people!", users_path, class: "buttonBig" %>
+				</div>
+			</div>
 		<% else %>
 			There 
 			<% if @matches_count == 1 %>
