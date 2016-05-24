@@ -81,10 +81,14 @@
 	background-color: transparent;
 	color: #F16A53;
 }
-.buttonBig:hover, .buttonSmall:hover {
+.buttonSmall:hover {
 	color: white;
 	text-decoration: none;
 	background-color:  #F16A53;
+}
+.buttonBig:hover {
+	background-color: white;
+	color: #F16A53;
 }
 .bg{
 	background-repeat: no-repeat;
