@@ -24,9 +24,16 @@
     <%= f.label :age %><br>
     <%= f.text_field :age %>
   </div>
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :gender %><br>
     <%= f.collection_select :gender, Profile::GENDERS, :to_s, :to_s  %>
+  </div> -->
+  <div class="field">
+    <!--<%= f.label :gender %><br />-->
+    <%= f.label :gender, "Male", :value => "Male"  %>
+    <%= f.radio_button :gender, "Male" %>
+    <%= f.label :gender, "Female", :value => "Female" %>
+    <%= f.radio_button :gender, "Female" %>
   </div>
   <div class="field">
     <%= f.label :location %><br>
