@@ -38,10 +38,10 @@
 		                		<!-- <br>Common interest: <%= @common_interest[user.id] %> -->
 		           			 </div>
 							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :method => :post do %>
-				            		<span class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
+				            		<span title="Like this user" class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
 				            <%= link_to "#",:class => 'users-button dislike-button' do %>
-				            		<span class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
+				            		<span title="Dislike this user" class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
 				            <% if current_user.followed_by?(user) %>
 					            <h3 class="no-margin-top" style = "color: blue">
@@ -53,7 +53,7 @@
 					            </h3>
 					        <% else %>
 					         	<%= link_to superlike_user_user_path(user),:class => 'users-button super-like-button', :method => :post do %>
-					            		<span class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
+					            		<span title="Super like this user" class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
 					            <% end %> 
 					        <% end %>  
 				        </div>

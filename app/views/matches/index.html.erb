@@ -33,10 +33,10 @@
 			            	<div class="photo" style="background-image: url('<%=user.profile.avatar.url%>')"></div>
 							<br>
 							<%= link_to unlike_user_match_path(user),:class => 'users-button dislike-button', :method => :delete, data: { confirm: 'Are you sure?' } do %>
-				            		<span class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
+				            		<span title="Unlike this user" class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
 				            <%= link_to "#",:class => 'users-button super-like-button' do %>
-				            		<span class="fa fa-comments hvr-bounce-in" aria-hidden="true"></span>
+				            		<span title="Message" class="fa fa-comments hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
 				        </div>
 					</div>
