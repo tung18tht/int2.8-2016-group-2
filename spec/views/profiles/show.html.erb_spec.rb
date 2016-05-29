@@ -3,9 +3,10 @@ require 'rails_helper'
 RSpec.describe "profiles/show", type: :view do
   before(:each) do
     @profile = assign(:profile, Profile.create!(
+      :avatar => File.new(Rails.root + 'spec/fixtures/jc.png'),
       :user_name => "User Name",
       :age => 20,
-      :gender => "Gender",
+      :gender => "Male",
       :location => "Location",
       :intro => "MyText",
       :interest => "MyText",

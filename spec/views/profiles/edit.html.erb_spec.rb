@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "profiles/edit", type: :view do
   before(:each) do
     @profile = assign(:profile, Profile.create!(
+      :avatar => File.new(Rails.root + 'spec/fixtures/jc.png'),
       :user_name => "MyString",
       :age => "20",
       :gender => "MyString",
