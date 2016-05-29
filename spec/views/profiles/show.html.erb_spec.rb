@@ -4,7 +4,7 @@ RSpec.describe "profiles/show", type: :view do
   before(:each) do
     @profile = assign(:profile, Profile.create!(
       :user_name => "User Name",
-      :age => "Age",
+      :age => 20,
       :gender => "Gender",
       :location => "Location",
       :intro => "MyText",

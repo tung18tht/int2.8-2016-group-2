@@ -6,7 +6,6 @@ Feature: Logging in
   Scenario: User logged in
     Given a logged in user
     Then I should see Find Friends
-    And I should see Matches
     And I should see my email
     And I should not see the Sign up option
     And I should see the Sign out option

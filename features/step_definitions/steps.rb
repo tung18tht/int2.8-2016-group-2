@@ -69,7 +69,7 @@ Then(/^I should see the new post page$/) do
   expect(current_path).to eq(new_post_path)
 end
 When(/^I upload an image$/) do
-  attach_file 'post[image]', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'post[image]', 'public/jc.png'
 end
 When(/^I input a caption$/) do
   fill_in "Caption", :with => 'Demo'
@@ -81,7 +81,7 @@ Then(/^I should be redirected to the post page$/) do
 	expect(current_path).to eq('/posts/1')
 end
 Then(/^I should see my post$/) do
-  expect(page).to have_xpath("//img[contains(@src,'012_-_b8Du2Oq.jpg')]")
+  expect(page).to have_xpath("//img[contains(@src,'jc.png')]")
   expect(page).to have_content('Demo')
 end
 Then(/^I should be able to edit$/) do
@@ -91,7 +91,7 @@ end
 #Edit post
 Given(/^I uploaded a post$/) do
   visit new_post_path
-  attach_file 'post[image]', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'post[image]', 'public/jc.png'
   fill_in "Caption", :with => 'Demo'
   click_button "Post"
 end
@@ -149,13 +149,13 @@ Given(/^an user who has a profile$/) do
   fill_in "Password", :with => '12345678'
   click_button "LOG IN"
   visit new_profile_path
-  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'profile_avatar', 'public/jc.png'
   fill_in "User name", :with => 'Test'
   fill_in "Age", :with => '20'
-  select "Male", :from => "Gender"
+  choose('Male')
   fill_in "Location", :with => "Hanoi"
   fill_in "Intro", :with => "Hello"
-  fill_in "Interest", :with => "sleep"
+  fill_in "profile[interest]", :with => "sleep"
   click_button "Create Profile"
 end
 
@@ -170,13 +170,13 @@ Given(/^another user who has a profile$/) do
   fill_in "Password", :with => '12345678'
   click_button "LOG IN"
   visit new_profile_path
-  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'profile_avatar', 'public/jc.png'
   fill_in "User name", :with => 'Test2'
   fill_in "Age", :with => '20'
-  select "Male", :from => "Gender"
+  choose('Male')
   fill_in "Location", :with => "Hanoi"
   fill_in "Intro", :with => "Hello"
-  fill_in "Interest", :with => "sleep"
+  fill_in "profile[interest]", :with => "sleep"
   click_button "Create Profile"
   click_on "Sign Out"
 end
@@ -195,13 +195,13 @@ Then(/^I should see Create your profile button$/) do
 end
 
 When(/^I fill my information$/) do 
-  attach_file 'profile_avatar', 'public/system/posts/images/000/000/001/medium/012_-_b8Du2Oq.jpg'
+  attach_file 'profile_avatar', 'public/jc.png'
   fill_in "User name", :with => 'Test'
   fill_in "Age", :with => '20'
-  select "Male", :from => "Gender"
+  choose('Male')
   fill_in "Location", :with => "Hanoi"
   fill_in "Intro", :with => "Hello"
-  fill_in "Interest", :with => "sleep"
+  fill_in "profile[interest]", :with => "sleep"
   click_button "Create Profile"
 end
 
