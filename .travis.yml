@@ -5,3 +5,4 @@ rvm:
   - 2.2
 services:
   - postgresql
+script: "bundle exec rake cucumber"
