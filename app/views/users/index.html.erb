@@ -52,7 +52,7 @@
 									<% end %>	
 					            </h3>
 					        <% else %>
-					         	<%= link_to superlike_user_user_path(user),:class => 'users-button super-like-button', :method => :post do %>
+					         	<%= link_to superlike_user_user_path(user),:class => 'users-button super-like-button',:id => "super_like_this_user", :method => :post do %>
 					            		<span title="Super like this user" class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
 					            <% end %> 
 					        <% end %>  
