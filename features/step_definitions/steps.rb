@@ -256,17 +256,12 @@ end
 
 #Superlike other profile
   When(/^I click on "Superlike"$/) do
-    visit users_path
-    find('#super_like_this_user', :visible => false).click
+    find('#super_like_user_1', :visible => false).click
   end
 
   Given(/^that another user who has a profile$/) do
-   @user = User.create!({
-             :email => "testing2@usth.edu.vn",
-             :password => "12345678",
-             :password_confirmation => "12345678"
-           })
-  visit new_user_session_path
+  click_on "Sign Out"
+  click_on "Sign In"
   fill_in "Email", :with => 'testing2@usth.edu.vn'
   fill_in "Password", :with => '12345678'
   click_button "LOG IN"
@@ -281,7 +276,7 @@ end
   click_button "Create Profile"
 end
   
-  Then(/^He should see someoone superliked him$/) do
+  Then(/^He should see some one superliked him$/) do
     visit users_path
-    expect(page).to have_no_content("He has superliked you!")
+    expect(page).to have_content("He has superliked you!")
   end

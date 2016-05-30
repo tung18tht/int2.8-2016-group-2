@@ -9,7 +9,7 @@ Feature: Superlike other user
 		And an user who has a profile
 		And I am in find friend page
 		Then I click on "Superlike"
-		Then I should not see that user infomation
+		Then I should not see that user information
 		And that another user who has a profile
-		Then He should see someoone superliked him
+		Then He should see some one superliked him
 
