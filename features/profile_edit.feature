@@ -11,3 +11,9 @@ Feature: Editing profile
     When I edit my information
     Then I should be redirected to the profile page
     And I should see my new information
+
+  Scenario: Another user try to edit others' profile
+    Given another user who has a profile
+    And an user who has a profile
+    When I follow "profiles/1/edit" 
+    Then I should be redirected to home page

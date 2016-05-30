@@ -22,6 +22,9 @@ end
 When(/^I go to the sign up page$/) do
 	visit new_user_registration_path
 end
+When(/^I follow \"profiles\/1\/edit\"$/) do 
+  visit "/profiles/1/edit"
+end
 When(/^I fill in form$/) do
 	fill_in "Email", :with => 'testing@usth.edu.vn'
 	fill_in "Password", :with => '12345678'
