@@ -16,3 +16,4 @@ Feature: Create profile
     And I fill my information
     Then I should be redirected to the profile page
     And I should see my information
+    And I should see Matches

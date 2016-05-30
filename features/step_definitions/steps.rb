@@ -131,9 +131,6 @@ end
 When(/^I click on find friends$/) do
   click_on "Find Friends"
 end
-Then(/^I should see find friends tab$/) do
-  expect(page).to have_content('Find friends')
-end
 Then(/^I should see find friends intro$/) do
   expect(page).to have_content('Find people with the same interest')
 end
