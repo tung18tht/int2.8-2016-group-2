@@ -243,13 +243,12 @@ end
   end
   #When(/^I press "([^"]*)"$/) do |button|
   When(/^I click on "Like"$/) do
-    visit users_path
-    find('#like_this_user', :visible => false).click
+    find('#like_user_1', :visible => false).click
 #    find(:css, 'span[title="Like"]', :visible => false).click
 
   end
     #And user infomation should disappear
-  Then (/^I should not see that user infomation/) do
+  Then (/^I should not see that user information/) do
     expect(page).to have_no_content("Test2")
     expect(page).to have_no_content("20")
     expect(page).to have_no_content("Hello")

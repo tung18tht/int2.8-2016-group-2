@@ -36,8 +36,8 @@
 							<div class="big-font blackText">
 		                		<%= user.profile.intro %>
 		                		<!-- <br>Common interest: <%= @common_interest[user.id] %> -->
-		           			 </div id="like_this_user">
-							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :id => "like_this_user",:method => :post do %>
+		           			 </div>
+							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :id => "like_user_#{user.id}",:method => :post do %>
 				            		<span title="Like this user" class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
 				            <% end %>
 				            <%= link_to "#",:class => 'users-button dislike-button' do %>

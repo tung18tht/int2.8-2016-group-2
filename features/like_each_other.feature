@@ -7,9 +7,6 @@ Feature: Like other people
    Given another user who has a profile
   	And an user who has a profile
     And I am in find friend page
+    Then I should see the other users
     Then I click on "Like"
-  	Then I should not see that user infomation
-
-
-
-    
+  	Then I should not see that user information
