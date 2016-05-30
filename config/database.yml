@@ -8,24 +8,19 @@ development:
   encoding: unicode
   database: development
   pool: 5
-  username: admin
-  password: admin
 
 test: &test
   adapter: postgresql
   encoding: unicode
   database: test
   pool: 5
-  username: admin
-  password: admin
 
 production:
   adapter: postgresql
   encoding: unicode
   database: production
   pool: 5
-  username: admin
-  password: admin
+
 # # SQLite version 3.x
 # #   gem install postgresql
 # #
