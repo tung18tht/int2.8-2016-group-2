@@ -36,26 +36,35 @@
 							<div class="big-font blackText">
 		                		<%= user.profile.intro %>
 		                		<!-- <br>Common interest: <%= @common_interest[user.id] %> -->
-		           			 </div>
-							<%= link_to like_user_user_path(user),:class => 'users-button like-button', :id => "like_user_#{user.id}",:method => :post do %>
-				            		<span title="Like this user" class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
-				            <% end %>
-				            <%= link_to "#",:class => 'users-button dislike-button' do %>
-				            		<span title="Dislike this user" class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
-				            <% end %>
-				            <% if current_user.followed_by?(user) %>
-					            <h3 class="no-margin-top" style = "color: blue">
-									<% if user.profile.gender == 'Male' %> 
-										He has superliked you!
-									<% else %>
-										She has superliked you!
-									<% end %>	
-					            </h3>
-					        <% else %>
-					         	<%= link_to superlike_user_user_path(user),:class => 'users-button super-like-button',:id => "super_like_user_#{user.id}", :method => :post do %>
-					            		<span title="Super like this user" class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
-					            <% end %> 
-					        <% end %>  
+		           			</div>
+				           			<div class="row row-centered">
+				           				<div class="col-md-4 col-xs-4">
+										<%= button_to like_user_user_path(user),:class => 'users-button like-button', :id => "like_user_#{user.id}",:method => :post do %>
+							            		<span title="Like this user" class="fa fa-thumbs-up hvr-bounce-in" aria-hidden="true"></span>
+							            <% end %>
+							            </div>
+							            <div class="col-md-4 col-xs-4">
+							            <%= button_to "#",:class => 'users-button dislike-button' do %>
+							            		<span title="Dislike this user" class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
+							            <% end %>
+							            </div>
+							            <% if current_user.followed_by?(user) %>
+								            <h3 class="no-margin-top" style = "color: blue">
+												<% if user.profile.gender == 'Male' %> 
+													He has superliked you!
+												<% else %>
+													She has superliked you!
+												<% end %>	
+								            </h3>
+								        <% else %>
+								        	<div class="col-md-4 col-xs-4">
+								         	<%= button_to superlike_user_user_path(user),:class => 'users-button super-like-button',:id => "super_like_user_#{user.id}", :method => :post do %>
+								            		<span title="Super like this user" class="fa fa-heart hvr-bounce-in" aria-hidden="true"></span>
+								            <% end %>
+								            </div>
+							        
+							        <% end %>  
+							        </div>
 				        </div>
 					</div>
 				</div>
