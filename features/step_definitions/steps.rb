@@ -237,3 +237,52 @@ Then(/^I should see my new information$/) do
   expect(page).to have_content('22')
 end
 
+#Like other profile
+  Given(/^I am in find friend page/)do
+    visit users_path
+  end
+  #When(/^I press "([^"]*)"$/) do |button|
+  When(/^I click on "Like"$/) do
+    visit users_path
+    find('#like_this_user', :visible => false).click
+#    find(:css, 'span[title="Like"]', :visible => false).click
+
+  end
+    #And user infomation should disappear
+  Then (/^I should not see that user infomation/) do
+    expect(page).to have_no_content("Test2")
+    expect(page).to have_no_content("20")
+    expect(page).to have_no_content("Hello")
+  end
+
+#Superlike other profile
+  When(/^I click on "Superlike"$/) do
+    visit users_path
+    find('#super_like_this_user', :visible => false).click
+  end
+
+  Given(/^that another user who has a profile$/) do
+   @user = User.create!({
+             :email => "testing2@usth.edu.vn",
+             :password => "12345678",
+             :password_confirmation => "12345678"
+           })
+  visit new_user_session_path
+  fill_in "Email", :with => 'testing2@usth.edu.vn'
+  fill_in "Password", :with => '12345678'
+  click_button "LOG IN"
+  visit new_profile_path
+  attach_file 'profile_avatar', 'public/jc.png'
+  fill_in "User name", :with => 'Test2'
+  fill_in "Age", :with => '20'
+  choose('Male')
+  fill_in "Location", :with => "Hanoi"
+  fill_in "Intro", :with => "Hello"
+  fill_in "profile[interest]", :with => "sleep"
+  click_button "Create Profile"
+end
+  
+  Then(/^He should see someoone superliked him$/) do
+    visit users_path
+    expect(page).to have_no_content("He has superliked you!")
+  end
