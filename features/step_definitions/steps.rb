@@ -241,18 +241,16 @@ end
   Given(/^I am in find friend page/)do
     visit users_path
   end
-  #When(/^I press "([^"]*)"$/) do |button|
   When(/^I click on "Like"$/) do
     find('#like_user_1', :visible => false).click
-#    find(:css, 'span[title="Like"]', :visible => false).click
   end
     #And user infomation should disappear
-  Then (/^I should not see that user information/) do
+  Then (/^I should not see that user infomation/) do
     expect(page).to have_no_content("Test2")
     expect(page).to have_no_content("20")
     expect(page).to have_no_content("Hello")
   end
-  #Match Users
+#match user
   Then (/^I click on "Sign Out"/) do
     click_on "Sign Out"
   end
@@ -288,7 +286,6 @@ end
   #Then (/^I should see "Chat"/) do
   # page.find('#chat_with_user_1', :visible => false )
   #end
-  
 
 #Superlike other profile
   When(/^I click on "Superlike"$/) do
