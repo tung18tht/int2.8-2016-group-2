@@ -34,12 +34,12 @@
 							<br>
 							<div class="row row-centered">
 								<div class="col-md-4 col-xs-4 col-centered">
-								<%= button_to unlike_user_match_path(user),:class => 'users-button dislike-button', :method => :delete, data: { confirm: 'Are you sure?' } do %>
+								<%= button_to unlike_user_match_path(user),:class => 'users-button dislike-button',  :id => "unlike__matched_user_#{user.id}" ,:method => :delete, data: { confirm: 'Are you sure?' } do %>
 					            		<span title="Unlike this user" class="fa fa-thumbs-down hvr-bounce-in" aria-hidden="true"></span>
 					            <% end %>
 					            </div>
 					            <div class="col-md-4 col-xs-4 col-centered">
-					            <%= link_to "#",:class => 'users-button super-like-button' do %>
+					            <%= link_to "#",:id => "chat_matched_user_#{user.id}",:class => 'users-button super-like-button' do %>
 					            		<span title="Message" class="fa fa-comments hvr-bounce-in" aria-hidden="true"></span>
 					            <% end %>
 					            </div>
