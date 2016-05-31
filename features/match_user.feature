@@ -9,7 +9,7 @@
     And an user who has a profile
     Given I am in find friend page
     When I click on "Like"
-    And I should not see that user infomation
+    And I should not see that user information
     Then I click on "Sign Out"
     Then that user log in
     Then that user click on "Like"
