@@ -245,7 +245,6 @@ end
   When(/^I click on "Like"$/) do
     find('#like_user_1', :visible => false).click
 #    find(:css, 'span[title="Like"]', :visible => false).click
-
   end
     #And user infomation should disappear
   Then (/^I should not see that user information/) do
@@ -253,6 +252,43 @@ end
     expect(page).to have_no_content("20")
     expect(page).to have_no_content("Hello")
   end
+  #Match Users
+  Then (/^I click on "Sign Out"/) do
+    click_on "Sign Out"
+  end
+  Then (/^that user log in/) do
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", :with => 'testing2@usth.edu.vn'
+    fill_in "Password", :with => '12345678'
+    click_button "LOG IN"
+  end
+  Then (/^that user click on "Like"/) do
+    visit users_path
+    find('#like_user_2' , :visible => false).click
+  end
+  Then (/^that user should not see my information/) do
+    expect(page).to have_no_content("Test")
+    expect(page).to have_no_content("20")
+    expect(page).to have_no_content("Hello")
+  end
+  Then (/^that user visit matches page/) do
+    visit matches_path
+  end
+  Then (/^that user should see match intro/) do
+    expect(page).to have_no_content("There are 1 match")
+  end 
+  Then (/^that user should see the other users who like them/) do
+    expect(page).to have_no_content("Test2")
+  end
+  # Then (/^that user should see "Unlike"/) do
+  # expect(page.html).should have_css('#unlike_matched_user_2', :visible => false)
+  #  page.find('#unlike_user_1' , :visible => false)
+  # end
+  #Then (/^I should see "Chat"/) do
+  # page.find('#chat_with_user_1', :visible => false )
+  #end
+  
 
 #Superlike other profile
   When(/^I click on "Superlike"$/) do
