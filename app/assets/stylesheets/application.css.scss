@@ -92,6 +92,10 @@
 }
 .bg{
 	background: url("bg.jpg") no-repeat center center fixed; 
+	-webkit-background-size: auto auto;
+	-moz-background-size: auto auto;
+	-o-background-size: auto auto;
+	background-size: auto auto;
 }
 .newUI {
 	max-width: 100%;
