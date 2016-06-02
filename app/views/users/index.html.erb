@@ -20,8 +20,8 @@
 		<div class="centering whiteText row-centered">
 			<h1>Find friends</h1>
 			<p>Find people with the same interest</p>
-
-			<% @users.each do |user| %>
+			<% if @users.length > 0 %>
+				<% user = @users[0] %>
 			    <%#= link_to (user.email), user_path(user) %> <!-- <br> -->
 			    <div class="col-md-4 col-xs-10 col-centered profile-container profile-display">
 			    	<div class="row">		
@@ -69,12 +69,14 @@
 							        
 							        <% end %>  
 							        </div>
-							    </div></div>
+							    </div>
+							</div>
 				        </div>
 					</div>
 				</div>
-			<% end %>
-				
+			<% else %> 
+				<h2>Can't find any user ! Please wait !</h2>	
+			<% end %>			
 		</div>
 	<% end %>
 
